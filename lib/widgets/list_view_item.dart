@@ -12,29 +12,14 @@ class ListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        child: Row(
-          children: [
-            Container(
-              width: 30,
-              height: 30,
-              color: color,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(groceryType),
-            const Spacer(),
-            Container(
-              child: Text(quantity.toString()),
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
-            ),
-          ],
-        ),
+    return ListTile(
+      leading: Container(
+        width: 24,
+        height: 24,
+        color: color,
       ),
+      title: Text(groceryType),
+      trailing: Text(quantity.toString()),
     );
   }
 }
